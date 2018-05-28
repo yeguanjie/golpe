@@ -27,4 +27,4 @@ dependency-reduced-pom.xml
 .svn/
 rebel.xml
 /*/target/
-
+/.idea/
