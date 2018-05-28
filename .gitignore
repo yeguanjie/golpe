@@ -26,3 +26,5 @@ dependency-reduced-pom.xml
 .svn
 .svn/
 rebel.xml
+/*/target/
+
