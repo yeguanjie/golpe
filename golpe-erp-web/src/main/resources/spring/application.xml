@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+      http://www.springframework.org/schema/context
+      http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+       default-lazy-init="false">
+
+
+    <!--数据库连接配置-->
+    <import resource="spring-datasources.xml"/>
+
+    <bean id="propertiesConfiguration" class="com.golpesoft.erp.process.component.PropertyUtil">
+        <constructor-arg index="0" 	value="app.sd_server_host" />	<!-- 服务地址：10.0.21.56 -->
+        <constructor-arg index="1" 	value="app.sd_server_port" />	<!-- 服务端口：8283 -->
+        <constructor-arg index="2"   value="app.artifactId" />
+        <constructor-arg index="3" 	value="app.profile.active" />
+        <constructor-arg index="4" 	value="app.artifactId" />
+        <constructor-arg index="5" 	value="ignore.properties" />
+        <property name="locations">
+            <list>
+                <value>classpath:properties/config-${env}.properties</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>

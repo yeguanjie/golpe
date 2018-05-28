@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd"
+       default-lazy-init="true">
+
+    <!-- 当前库数据源 -->
+    <bean id="dataSource" name="dataSource" class="org.apache.commons.dbcp.BasicDataSource" primary="true">
+        <!-- 指定连接数据库的驱动-->
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <!-- 指定连接数据库的URL-->
+        <property name="url" value="${jdbc.url}"/>
+        <!-- 数据库用户名密码解密处理引用 -->
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}"/>
+        <!-- 指定连接池中保留的最大连接数. Default:15-->
+        <property name="maxActive" value="${jdbc.maxPoolSize}"/>
+        <!-- 指定连接池中保留的最小连接数-->
+        <property name="minIdle" value="${jdbc.minPoolSize}"/>
+        <!-- 指定连接池的初始化连接数  取值应在minPoolSize 与 maxPoolSize 之间.Default:3-->
+        <property name="initialSize" value="${jdbc.initialPoolSize}"/>
+        <!--#给出一条简单的sql语句进行验证-->
+        <property name="validationQuery" value="select getdate()" />
+        <!--#在取出连接时进行有效验证-->
+        <property name="removeAbandonedTimeout" value="120" />
+        <property name="removeAbandoned" value="true" />
+        <!-- #运行判断连接超时任务的时间间隔，单位为毫秒，默认为-1，即不执行任务。 -->
+        <property name="timeBetweenEvictionRunsMillis" value="3600000" />
+        <!-- #连接的超时时间，默认为半小时。 -->
+        <property name="minEvictableIdleTimeMillis" value="3600000" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testWhileIdle" value="true" />
+
+    </bean>
+
+    <!-- 声明使用注解式事务 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--事务模板 -->
+    <bean id="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="transactionManager" />
+        <property name="isolationLevelName" value="ISOLATION_DEFAULT"/>
+        <property name="propagationBehaviorName" value="PROPAGATION_REQUIRED"/>
+    </bean>
+
+
+</beans>
