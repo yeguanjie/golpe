@@ -4,18 +4,15 @@ import com.golpesoft.erp.dal.model.TBaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
-import java.util.Date;
+
 
 /**
  * Created by guanjieye on 2018/5/19.
  */
-@Table(name = "ADMIN_ROLE")
 @Getter
 @Setter
+@Table(name = "admin_role")
 public class AdminRole extends TBaseModel {
 
     private static final long serialVersionUID = 5001966718676044921L;

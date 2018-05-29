@@ -24,7 +24,7 @@
         <!-- 指定连接池的初始化连接数  取值应在minPoolSize 与 maxPoolSize 之间.Default:3-->
         <property name="initialSize" value="${jdbc.initialPoolSize}"/>
         <!--#给出一条简单的sql语句进行验证-->
-        <property name="validationQuery" value="select getdate()" />
+        <property name="validationQuery" value="select 1" />
         <!--#在取出连接时进行有效验证-->
         <property name="removeAbandonedTimeout" value="120" />
         <property name="removeAbandoned" value="true" />

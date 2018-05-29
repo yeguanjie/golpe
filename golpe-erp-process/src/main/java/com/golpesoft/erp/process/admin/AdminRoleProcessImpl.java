@@ -6,8 +6,8 @@ import com.golpesoft.erp.facade.models.request.QueryPageReqDTO;
 import com.golpesoft.erp.facade.models.response.AdminRoleResDTO;
 import com.golpesoft.erp.facade.models.response.QueryPageResDTO;
 import com.golpesoft.erp.process.component.PageUtils;
-//import org.apache.commons.collections4.CollectionUtils;
-//import org.apache.commons.collections4.Transformer;
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections.Transformer;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.BeanUtils;
@@ -36,15 +36,13 @@ public class AdminRoleProcessImpl {
         PageUtils.Page page = pageUtils.getCount(queryPageReqDTO.getPageIndex(), queryPageReqDTO.getPageCount(), counts);
         List<AdminRole> list = adminRoleMapper.selectByExampleAndRowBounds(example, new RowBounds(page.getStartCount(), queryPageReqDTO.getPageCount()));
         QueryPageResDTO<AdminRoleResDTO> resDTO = new QueryPageResDTO<AdminRoleResDTO>();
-//        List<AdminRoleResDTO> list1 = (List<AdminRoleResDTO>) CollectionUtils.collect(list, new Transformer<AdminRole, AdminRoleResDTO>() {
-//            @Override
-//            public AdminRoleResDTO transform(AdminRole adminRole) {
-//                AdminRoleResDTO adminRoleResDTO = new AdminRoleResDTO();
-//                BeanUtils.copyProperties(adminRole, adminRoleResDTO);
-//                return adminRoleResDTO;
-//            }
-//        });
-//        resDTO.setResultList(list1);
+        List<AdminRoleResDTO> list1 = (List<AdminRoleResDTO>) CollectionUtils.collect(list, object -> {
+            AdminRole adminRole = (AdminRole) object;
+            AdminRoleResDTO adminRoleResDTO = new AdminRoleResDTO();
+            BeanUtils.copyProperties(adminRole, adminRoleResDTO);
+            return adminRoleResDTO;
+        });
+        resDTO.setResultList(list1);
         return resDTO;
     }
 
