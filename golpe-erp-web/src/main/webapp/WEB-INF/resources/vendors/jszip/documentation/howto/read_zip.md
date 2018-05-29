@@ -4,7 +4,7 @@ layout: default
 section: example
 ---
 
-This page explains how to read an existing zip file or add a existing file into
+This pageIndex explains how to read an existing zip file or add a existing file into
 the zip file.
 
 

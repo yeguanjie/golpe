@@ -290,7 +290,7 @@
         </div>
         <!-- /top navigation -->
 
-        <!-- page content -->
+        <!-- pageIndex content -->
         <div class="right_col" role="main">
             <div class="">
                 <div class="page-title">
@@ -818,7 +818,7 @@
                 </div>
             </div>
         </div>
-        <!-- /page content -->
+        <!-- /pageIndex content -->
 
         <!-- footer content -->
         <footer>

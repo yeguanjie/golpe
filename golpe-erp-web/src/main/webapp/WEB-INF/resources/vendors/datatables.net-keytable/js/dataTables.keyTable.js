@@ -223,7 +223,7 @@ $.extend( KeyTable.prototype, {
 		}
 
 		// Reload - re-focus on the currently selected item. In SSP mode this
-		// has the effect of keeping the focus in position when changing page as
+		// has the effect of keeping the focus in position when changing pageIndex as
 		// well (which is different from how client-side processing works).
 		dt.on( 'xhr.keyTable', function ( e ) {
 			if ( that.s.focusDraw ) {
@@ -421,8 +421,8 @@ $.extend( KeyTable.prototype, {
 			}
 		}
 
-		// Is the row on the current page? If not, we need to redraw to show the
-		// page
+		// Is the row on the current pageIndex? If not, we need to redraw to show the
+		// pageIndex
 		if ( pageInfo.length !== -1 && (row < pageInfo.start || row >= pageInfo.start+pageInfo.length) ) {
 			this.s.focusDraw = true;
 
@@ -463,7 +463,7 @@ $.extend( KeyTable.prototype, {
 		var node = $( cell.node() );
 		node.addClass( this.c.className );
 
-		// Shift viewpoint and page to make cell visible
+		// Shift viewpoint and pageIndex to make cell visible
 		if ( shift === undefined || shift === true ) {
 			this._scroll( $(window), $(document.body), node, 'offset' );
 
@@ -524,8 +524,8 @@ $.extend( KeyTable.prototype, {
 				}
 				break;
 
-			case 33: // page up (previous page)
-			case 34: // page down (next page)
+			case 33: // pageIndex up (previous pageIndex)
+			case 34: // pageIndex down (next pageIndex)
 				e.preventDefault();
 				var index = dt.cells( {page: 'current'} ).nodes().indexOf( cell.node() );
 
@@ -542,8 +542,8 @@ $.extend( KeyTable.prototype, {
 					.draw( false );
 				break;
 
-			case 35: // end (end of current page)
-			case 36: // home (start of current page)
+			case 35: // end (end of current pageIndex)
+			case 36: // home (start of current pageIndex)
 				e.preventDefault();
 				var indexes = dt.cells( {page: 'current'} ).indexes();
 

@@ -14,7 +14,7 @@ define( [
 var _load = jQuery.fn.load;
 
 /**
- * Load a url into a page
+ * Load a url into a pageIndex
  */
 jQuery.fn.load = function( url, params, callback ) {
 	if ( typeof url !== "string" && _load ) {

@@ -19,12 +19,26 @@
             <artifactId>golpe-erp-dal</artifactId>
         </dependency>
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>golpe-erp-common</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.diamond</groupId>
             <artifactId>super-diamond-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.golpesoft.erp</groupId>
+            <artifactId>golpe-erp-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
         </dependency>
     </dependencies>
 

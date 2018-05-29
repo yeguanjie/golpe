@@ -1263,7 +1263,7 @@ $.extend( _dtButtons, {
 		return {
 			extend: 'collection',
 			text: text,
-			className: 'buttons-page-length',
+			className: 'buttons-pageIndex-length',
 			autoClose: true,
 			buttons: $.map( vals, function ( val, i ) {
 				return {

@@ -2989,7 +2989,7 @@ Field Code  Description
    4007     Database Type Code                  1 byte
    4008     Database file and fields definition
    4009     GZIP file type                      2 bytes
-   400B     IFS code page                       2 bytes
+   400B     IFS code pageIndex                       2 bytes
    400C     IFS Creation Time                   4 bytes
    400D     IFS Access Time                     4 bytes
    400E     IFS Modification time               4 bytes
@@ -3178,7 +3178,7 @@ requirements on how this field should be used.
 The 0x0008 Extra Field storage may be used with either setting for general 
 purpose bit 11.  Examples of the intended usage for this field is to store 
 whether "modified-UTF-8" (JAVA) is used, or UTF-8-MAC.  Similarly, other 
-commonly used character encoding (code page) designations can be indicated 
+commonly used character encoding (code pageIndex) designations can be indicated
 through this field.  Formalized values for use of the 0x0008 record remain 
 undefined at this time.  The definition for the layout of the 0x0008 field
 will be published when available.  Use of the 0x0008 Extra Field provides

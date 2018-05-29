@@ -39,9 +39,9 @@ this: (explained
     [here](https://github.com/rstacruz/nprogress/issues/8#issuecomment-23010560))
 
 ~~~ js
-$(document).on('page:fetch',   function() { NProgress.start(); });
-$(document).on('page:change',  function() { NProgress.done(); });
-$(document).on('page:restore', function() { NProgress.remove(); });
+$(document).on('pageIndex:fetch',   function() { NProgress.start(); });
+$(document).on('pageIndex:change',  function() { NProgress.done(); });
+$(document).on('pageIndex:restore', function() { NProgress.remove(); });
 ~~~
 
 Ideas

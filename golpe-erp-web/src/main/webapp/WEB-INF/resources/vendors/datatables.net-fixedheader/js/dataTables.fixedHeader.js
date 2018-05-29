@@ -352,7 +352,7 @@ $.extend( FixedHeader.prototype, {
 	},
 
 	/**
-	 * Reposition the floating elements to take account of horizontal page
+	 * Reposition the floating elements to take account of horizontal pageIndex
 	 * scroll
 	 *
 	 * @param  {string} item       The `header` or `footer`

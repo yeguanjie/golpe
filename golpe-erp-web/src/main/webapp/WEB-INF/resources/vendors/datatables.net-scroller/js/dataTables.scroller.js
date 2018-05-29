@@ -58,7 +58,7 @@ var DataTable = $.fn.dataTable;
  * the scrolling smooth) is drawn, while the scrolling container gives the
  * visual impression that the whole table is visible. This is done by making use
  * of the pagination abilities of DataTables and moving the table around in the
- * scrolling container DataTables adds to the page. The scrolling container is
+ * scrolling container DataTables adds to the pageIndex. The scrolling container is
  * forced to the height it would be for the full table display using an extra
  * element.
  *
@@ -526,7 +526,7 @@ $.extend( Scroller.prototype, {
 		}
 		this.fnMeasure( false );
 
-		/* Scrolling callback to see if a page change is needed - use a throttled
+		/* Scrolling callback to see if a pageIndex change is needed - use a throttled
 		 * function for the save save callback so we aren't hitting it on every
 		 * scroll
 		 */
@@ -1336,7 +1336,7 @@ Api.register( 'scroller.measure()', function ( redraw ) {
 	return this;
 } );
 
-Api.register( 'scroller.page()', function() {
+Api.register( 'scroller.pageIndex()', function() {
 	var ctx = this.context;
 
 	if ( ctx.length && ctx[0].oScroller ) {

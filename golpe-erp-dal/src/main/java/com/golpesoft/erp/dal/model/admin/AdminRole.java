@@ -1,5 +1,6 @@
-package com.golpesoft.erp.dal.model;
+package com.golpesoft.erp.dal.model.admin;
 
+import com.golpesoft.erp.dal.model.TBaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,12 +16,9 @@ import java.util.Date;
 @Table(name = "ADMIN_ROLE")
 @Getter
 @Setter
-public class AdminRole {
+public class AdminRole extends TBaseModel {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private static final long serialVersionUID = 5001966718676044921L;
 
     /*角色名称*/
     private String name;
@@ -28,9 +26,5 @@ public class AdminRole {
     private String code;
 
     private Integer status;
-
-    private Date createTime;
-
-    private Date updateTime;
 
 }

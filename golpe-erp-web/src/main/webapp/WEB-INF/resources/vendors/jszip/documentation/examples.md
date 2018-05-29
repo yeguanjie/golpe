@@ -86,7 +86,7 @@ zip.remove("photos"); // by removing the folder, you also remove its content.
 
 With `.generate(options)` you can generate a zip file (not a real file but its
 representation in memory). Check
-[this page]({{site.baseurl}}/documentation/howto/write_zip.html) for more
+[this pageIndex]({{site.baseurl}}/documentation/howto/write_zip.html) for more
 informations on how to write / give the file to the user.
 
 ```js
@@ -101,7 +101,7 @@ if (JSZip.support.uint8array) {
 ### Read a zip file
 
 With `.load(data)` you can load a zip file. Check
-[this page]({{site.baseurl}}/documentation/howto/read_zip.html) to see how to
+[this pageIndex]({{site.baseurl}}/documentation/howto/read_zip.html) to see how to
 do properly (it's more tricky that it seems).
 
 ```js

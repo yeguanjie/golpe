@@ -9,6 +9,7 @@
 *.MF
 target/
 *.iml
+*/*.iml
 *.ipr
 *.iws
 *.log
@@ -16,7 +17,7 @@ target/
 .classpath
 .project
 .metadata/
-.idea/
+.idea
 logs/
 .log
 dev.properties
@@ -26,5 +27,4 @@ dependency-reduced-pom.xml
 .svn
 .svn/
 rebel.xml
-/*/target/
-/.idea/
+*/target/

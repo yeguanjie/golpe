@@ -37,7 +37,7 @@ public class MybatisMapperScannerConfig {
     public SqlSessionFactory sqlSessionFactoryBean(DataSource dataSource) {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setTypeAliasesPackage("com.golpesoft.erp.dal.model");
+        bean.setTypeAliasesPackage("com.golpesoft.erp.dal.models");
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {
