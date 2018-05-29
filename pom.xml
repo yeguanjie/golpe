@@ -17,6 +17,7 @@
         <module>golpe-erp-web</module>
         <module>golpe-erp-common</module>
         <module>golpe-erp-facade</module>
+        <module>golpe-erp-service</module>
     </modules>
 
 
@@ -84,6 +85,11 @@
             <dependency>
                 <groupId>${project.groupId}</groupId>
                 <artifactId>golpe-erp-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>${project.groupId}</groupId>
+                <artifactId>golpe-erp-service</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

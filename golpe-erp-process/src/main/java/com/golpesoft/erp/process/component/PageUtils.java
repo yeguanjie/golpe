@@ -2,7 +2,8 @@ package com.golpesoft.erp.process.component;
 
 import com.golpesoft.erp.common.exceptions.BizException;
 import com.golpesoft.erp.facade.enums.BizCode;
-import com.google.common.collect.Maps;
+import com.golpesoft.erp.facade.enums.TradeStateEnum;
+import com.golpesoft.erp.facade.models.response.QueryPageResDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;

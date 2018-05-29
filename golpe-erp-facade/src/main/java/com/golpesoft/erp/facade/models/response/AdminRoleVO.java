@@ -4,14 +4,14 @@ import com.golpesoft.erp.facade.models.BaseResDTO;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Getter
 @Setter
-public class AdminRoleResDTO extends BaseResDTO {
+public class AdminRoleVO implements Serializable {
 
-
-    private static final long serialVersionUID = 38874145687616190L;
+    private static final long serialVersionUID = -8627777666859234991L;
 
     private Long id;
 
