@@ -77,6 +77,7 @@
 
     <!-- 输出到文件 -->
     <logger level="${logger.logLevel}" name="com.golpesoft" additivity="false">
+        <appender-ref ref="STDOUT"/>
         <!-- 去除错误日志 -->/
         <appender-ref ref="logfile"/>
         <!-- 只打印错误日志 -->
@@ -84,9 +85,10 @@
     </logger>
 
     <!-- 输出到控制台和文件，可定义更多的 Appender-->
-    <!---->
-    <root level="INFO" name="com.golpesoft">
+    <!--
+    <root level="INFO" name="com.golpesoft.erp">
         <appender-ref ref="STDOUT"/>
     </root>
+    -->
 
 </configuration>

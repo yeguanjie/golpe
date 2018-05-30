@@ -18,6 +18,7 @@ public class AdminRoleServiceImpl {
     private AdminRoleProcessImpl adminRoleProcess;
 
     public QueryPageResDTO<AdminRoleVO> queryAdminRole(QueryPageReqDTO<String> queryPageReqDTO){
+        log.info("123");
         QueryPageResDTO<AdminRoleVO> resDTO;
         try {
             resDTO = adminRoleProcess.queryAdminRole(queryPageReqDTO);
